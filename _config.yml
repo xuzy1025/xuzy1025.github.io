@@ -1,0 +1,166 @@
+# 导入的模板名称
+theme: jekyll-theme-chirpy
+# 更改网站语言,语言文件在"_data/locales"。默认是en
+lang: zh-CN
+# 更改时间› https://kevinnovak.github.io/Time-Zone-Picker
+timezone: Asia/Shanghai
+# jekyll 模板配置信息参考› https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# -------------------------------------------------------------------------------------------------------------------------
+# ----------------------------------------------------Jekyll核心配置信息----------------------------------------------------
+# 主页标题
+title: 万般不由人 
+# 自我介绍
+tagline: 利用jekyll-theme-chirpy搭建的个人Blog
+# 使用描述[一个最小的，响应和功能丰富的Jekyll主题为技术写作。]
+description: >- 
+  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+# 填写您的网站协议与主机名。例如：https://username.github.io
+url: "https://xuzy1025.github.io"
+# github名称
+github:
+  username: xuzy1025
+# twitter名称
+twitter:
+  username: 
+# 改成你的全名[它将显示为帖子的默认作者和页脚中的版权所有者]
+social:
+  name: 万般不由人
+  email: 740948432@qq.com
+  links:
+    #- https://twitter.com/username # 推特主页
+    #- https://github.com/xuzy1025  # gitHub主页
+    # 取消下面的注释以添加更多社交链接[facebok和linkedin]
+    #- https://www.facebook.com/username
+    #- https://www.linkedin.com/in/username
+# 填写您的验证字符串
+google_site_verification: 
+# ----------------------------------------------------Jekyll核心配置信息----------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------------------
+# ----------------------------------------------------Jekyll其他配置信息----------------------------------------------------
+# 谷歌分析
+google_analytics:
+  id: # 填写您的Google Analytics ID
+# 主题方案配色[默认light|dark]
+theme_mode: dark # 默认可以切换
+# 图片cdn配置[请注意，一旦分配了CDN url;将添加到以“/”开头的所有图像（网站头像和帖子的图像）路径;例如'https://cdn.com']
+img_cdn: # "https://chirpy-img.netlify.app"
+# 侧边栏上的头像，支持本地或CORS资源
+avatar: /assets/img/head.jpg #"/commons/avatar.jpg"
+#SEO `og:image`元标签中使用的网站范围的社交预览图像的URL。
+#它可以被前面的自定义“page.image”覆盖。
+social_preview_image: # 字符串、本地或CORS资源
+# boolean类型，posts中TOC的全局开关。
+toc: true
+# 评论
+comments:
+  active: #发布评论的全局切换，例如“disqus”。保持为空意味着禁用
+  #活动选项如下：
+  disqus:
+    shortname: # 填写Disqus短名称。›https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+  # 话语设置›https://utteranc.es/
+  utterances:
+    repo: # <gh用户名>/<repo>
+    issue_term: # < url | pathname | title | ...>
+  # Giscus options › https://giscus.app
+  giscus:
+    repo: # <gh-username>/<repo>
+    repo_id:
+    category:
+    category_id:
+    mapping: # optional, default to 'pathname'
+    input_position: # optional, default to 'bottom'
+    lang: # optional, default to the value of `site.lang`
+    reactions_enabled: # optional, default to the value of `1`
+# 自托管静态资产，可参考›https://github.com/cotes2020/chirpy-static-assets
+assets:
+  self_host:
+    enabled: # boolean, keep empty means false
+    # specify the Jekyll environment, empty means both
+    # only works if `assets.self_host.enabled` is 'true'
+    env: # [development|production]
+# pwa功能选项
+pwa:
+  enabled: true 
+paginate: 10
+# 网站的基本URL
+baseurl: ""
+# ----------------------------------------------------Jekyll其他配置信息----------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------------------
+# ----------------------------------------------------不建议修改以下选项-----------------------------------------------------
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts: # 自动文摘设置，参考 › https://github.com/jneen/rouge#full-options
+    css_class: highlight
+    # default_lang:控制台
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: "" # 此处的空字符串表示项目中的所有文件
+      type: posts
+    values:
+      layout: post
+      comments: true # 在帖子中启用评论。
+      toc: true # 在帖子中显示TOC列。
+      # 除非您有足够的信心，否则不要修改以下参数
+      # 以更新此项目中所有其他帖子链接的代码。
+      permalink: /posts/:title/
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs #请参阅`site.collections`
+    values:
+      layout: page
+      permalink: /:title/
+  - scope:
+      path: assets/img/favicons
+    values:
+      swcache: true
+  - scope:
+      path: assets/js/dist
+    values:
+      swcache: true
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - rollup.config.js
+  - package*.json
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+# ----------------------------------------------------不建议修改以下选项-----------------------------------------------------
