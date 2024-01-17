@@ -70,5 +70,15 @@
 5.进入项目根目录：cd 项目目录
                  `jekyll s` 启动本地服务器,会生成一个本地http://127.0.0.1:4000/。进入此网站
                  就是默认你本地的网站内容。可以进行实时修改;但是如果修改了_config.yml文件;需要
-                 关闭在重启.`ctrl+c`关闭服务器;         
+                 关闭在重启.`ctrl+c`关闭服务器;   
+6.提交文件时候：如果发现检查的文件报错。出现在.github/workflows/jekyll.yml
+               Your bundle only supports platforms ["x64-mingw-ucrt"] but your local platform
+               is x86_64-linux. Add the current platform to the lockfile with
+               `bundle lock --add-platform x86_64-linux` and try again.
+               Error: The process '/opt/hostedtoolcache/Ruby/3.1.4/x64/bin/bundle' failed with exit code 16
+               大致的意思就是：环境是在linux上执行，因为我的本机是windows.缺少linux环境
+               进入本地克隆项目,`bundle lock --add-platform x86_64-linux`安装一下linux环境
+               `bundle install` 安装环境,写入文件
+
+                     
 
